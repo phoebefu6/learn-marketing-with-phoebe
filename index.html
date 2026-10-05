@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Six sessions on marketing fundamentals as decisions: who the product is for, the promise against the real alternative, the channel where customers already are, a budget bench on 8,000 real leads, what a customer is worth, and the plan on one page. Free, by Phoebe Fu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Learn Marketing with Phoebe">
+<meta property="og:description" content="Who it is for, what you promise, where they already are, what they cost and what they are worth. Six decisions, one real funnel of 8,000 leads.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-marketing-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-marketing-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn Marketing with Phoebe">
+<meta name="twitter:description" content="Marketing fundamentals as six decisions, with a budget bench on 8,000 real leads computed in your browser.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-marketing-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Learn Marketing with Phoebe</title>
+<link rel="stylesheet" href="assets/style.css?v=3">
+<style>
+
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: 1; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(var(--shadow-rgb),.16); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--muted); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,var(--indigo-50)); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+
+  .not-this { border: 1px solid var(--hairline); border-left: 4px solid var(--clay); border-radius: var(--radius); background: #fff; padding: 1.1rem 1.3rem; margin-top: 1.2rem; }
+  .not-this h3 { font-size: .95rem; font-weight: 800; margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn with Phoebe · Business</div>
+    <h1>Learn <span class="accent">Marketing</span> with Phoebe</h1>
+    <p class="sub">Marketing is a short chain of decisions that most teams make out of order: they pick channels before they know who they are for, write the promise before they know what the customer would otherwise do, and set a budget before they know what a customer is worth. Six sessions make the decisions in the right order, on one constructed product, a note-taker called Cadence, and one real funnel: 8,000 genuine leads from a Brazilian marketplace and the 842 that became paying sellers. Nothing here needs an AI tool or a line of code. It needs a sheet, a calculator, and the willingness to write down who it is not for.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="6">6</b><span>sessions</span></div>
+      <div class="stat"><b data-count="8000">8,000</b><span>real leads</span></div>
+      <div class="stat"><b data-count="842">842</b><span>real closed deals</span></div>
+      <div class="stat"><b data-count="6">6</b><span>channels on the bench</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The six sessions 🎯 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· from who it is for to a plan someone can approve</span></h2>
+      <p class="plede">The running product is <strong>Cadence</strong>, a fictional AI note-taker sold two ways, solo and Teams; every Cadence number is constructed and labelled. The real data is the public <strong>Marketing Funnel by Olist</strong>, every lead with the channel it came from and whether it closed.</p>
+    </div>
+    <div class="course-grid">
+      <a class="course-card" href="courses/01-who-it-is-for.html" style="--diff:#34D399">
+        <span class="cicon">🎯</span>
+        <span class="cnum">Session 1 · foundations</span>
+        <h3>Who it is for, and who it is not</h3>
+        <p>Segments as groups that buy alike and talk to each other, the beachhead you win first, and an ideal customer profile with a written not-for list. Five Cadence segments scored on one sheet.</p>
+        <span class="meta"><span class="pill amber">▶ Start here</span></span>
+      </a>
+      <a class="course-card" href="courses/02-the-promise.html" style="--diff:#34D399">
+        <span class="cicon">🧭</span>
+        <span class="cnum">Session 2 · foundations</span>
+        <h3>The promise, against the real alternative</h3>
+        <p>Positioning built the way April Dunford builds it: start from what customers would do if you did not exist, then the attributes only you have, the value they unlock, who cares most, and the category that makes it obvious.</p>
+        <span class="meta"><span class="pill">five components</span></span>
+      </a>
+      <a class="course-card" href="courses/03-where-they-already-are.html" style="--diff:#FBBF24">
+        <span class="cicon">🗺️</span>
+        <span class="cnum">Session 3 · core</span>
+        <h3>Where they already are</h3>
+        <p>Channel choice with the Bullseye from Traction: all nineteen channels on the table, a middle ring of cheap tests, one channel in the centre. Plus why the rule of seven touchpoints has no study behind it.</p>
+        <span class="meta"><span class="pill">the Bullseye</span></span>
+      </a>
+      <a class="course-card" href="courses/04-the-funnel-bench.html" style="--diff:#FBBF24">
+        <span class="cicon">🎛️</span>
+        <span class="cnum">Session 4 · bench night</span>
+        <h3>The funnel bench</h3>
+        <p>8,000 real leads and 842 real closed deals from the public Olist funnel, computed in your browser. Split a budget across six channels and read the leads, deals, CAC and payback. Then break it on purpose.</p>
+        <span class="meta"><span class="pill amber">★ the bench</span></span>
+      </a>
+      <a class="course-card" href="courses/05-what-a-customer-is-worth.html" style="--diff:#FB923C">
+        <span class="cicon">💰</span>
+        <span class="cnum">Session 5 · core</span>
+        <h3>What a customer is worth</h3>
+        <p>CAC, payback and lifetime value on a constructed Cadence Teams account, what each formula quietly assumes, and what David Skok actually wrote about the 3 to 1 ratio and the twelve-month line.</p>
+        <span class="meta"><span class="pill">CAC, payback, LTV</span></span>
+      </a>
+      <a class="course-card" href="courses/06-the-one-page-plan.html" style="--diff:#FB923C">
+        <span class="cicon">📝</span>
+        <span class="cnum">Session 6 · core</span>
+        <h3>The one-page marketing plan</h3>
+        <p>Sessions 1 to 5 on a single page someone can approve: who, the promise, the channel and its test, the budget split and its CAC, the number that says stop. And the brand-versus-activation argument nobody has settled.</p>
+        <span class="meta"><span class="pill amber">🔒 final scorecard</span></span>
+      </a>
+    </div>
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>foundations</span>
+      <span><i style="background:#FBBF24"></i>core and bench night</span>
+      <span><i style="background:#FB923C"></i>bring your numbers</span>
+    </div>
+  </section>
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Your passport 🎫</h2>
+      <p class="plede">Clear all three quiz questions in a session and it gets stamped. Six stamps means you can name a beachhead, write a positioning from the real alternative, pick a channel and its test, split a budget by what a customer costs, and put the whole plan on one page. Stamps live in this browser only.</p>
+    </div>
+    <div class="pp-strip"></div>
+  </section>
+  <section class="section">
+    <div class="not-this">
+      <h3>What this is not, so you land in the right place 🧭</h3>
+      <table class="clean">
+        <tr><th>If your question is</th><th>Go here instead</th></tr>
+        <tr><td>How do I use AI to write content, ads, emails, SEO pages or social posts?</td><td><a href="https://phoebefu6.github.io/learn-ai-marketing-with-phoebe/">AI + Marketing ↗</a></td></tr>
+        <tr><td>How do I name a company, build its brand identity and positioning statement?</td><td><a href="https://phoebefu6.github.io/learn-ai-branding-with-phoebe/">AI + Branding ↗</a></td></tr>
+        <tr><td>Which channel deserves the credit for a sale?</td><td><a href="https://phoebefu6.github.io/learn-marketing-attribution-with-phoebe/">Marketing Attribution ↗</a></td></tr>
+        <tr><td>What should the price be, and how will demand react to it?</td><td><a href="https://phoebefu6.github.io/learn-economics-with-phoebe/">Economics ↗</a></td></tr>
+        <tr><td>How do I design the test that proves a change worked?</td><td><a href="https://phoebefu6.github.io/learn-experimentation-with-phoebe/">Experimentation ↗</a></td></tr>
+        <tr><td>How do I build my own professional brand?</td><td><a href="https://phoebefu6.github.io/learn-personal-branding-with-phoebe/">Personal Branding ↗</a></td></tr>
+        <tr><td><strong>Who is it for, what do we promise, where do we show up, and what can we afford to pay for a customer?</strong></td><td><strong>you are in the right place</strong></td></tr>
+      </table>
+    </div>
+  </section>
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Three doors into the same conviction: a marketing decision is only as good as the one before it.</p>
+      <div class="path"><b>🚀 Launching something next quarter</b>
+        <a class="pstep" href="courses/01-who-it-is-for.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-the-promise.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-the-one-page-plan.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">who, the promise, and the plan on one page</span>
+      </div>
+      <div class="path"><b>💸 I own a budget and a channel mix</b>
+        <a class="pstep" href="courses/03-where-they-already-are.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-the-funnel-bench.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-what-a-customer-is-worth.html">5</a>
+        <span style="font-size:.82rem;color:var(--muted)">channels, the bench, and what a customer can cost</span>
+      </div>
+      <div class="path"><b>🎯 The whole chain</b>
+        <a class="pstep" href="courses/01-who-it-is-for.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-the-promise.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-where-they-already-are.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-the-funnel-bench.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-what-a-customer-is-worth.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-the-one-page-plan.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">six decisions, in the order that makes each one cheaper</span>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>What is honest here 🧾</h2>
+      <p class="plede">Real data where it exists, constructed numbers where it does not, and the label always says which.</p>
+    </div>
+    <table class="clean">
+      <tr><th>Claim</th><th>Status</th></tr>
+      <tr><td>Every lead count, close rate and range on the bench</td><td><strong>Really computed</strong> in your browser from all 8,000 leads of the public Marketing Funnel by Olist (CC BY-NC-SA 4.0)</td></tr>
+      <tr><td>Cost per lead, saturation, revenue per customer, margin</td><td><strong>Constructed,</strong> printed on the bench and editable; the pages claim the ordering of budget splits, not their dollar values</td></tr>
+      <tr><td>Cadence, its segments, prices and churn</td><td><strong>Constructed</strong> for teaching, consistent with the Cadence used by the AI marketing and AI branding courses</td></tr>
+      <tr><td>April Dunford, Gabriel Weinberg, Bill Aulet, David Skok</td><td><strong>Quoted from their own published pages,</strong> short and exact; book chapters not opened are reported, not quoted</td></tr>
+      <tr><td>"Half my advertising is wasted", "the quarter-inch hole", "the rule of seven"</td><td><strong>Traced.</strong> The first has no firm author, the second is not Levitt's, the third has no study behind it</td></tr>
+    </table>
+  </section>
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole chain at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+  <footer class="pagefoot">
+    <span>learn-marketing-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span>Neighbours on the shelf: <a href="https://phoebefu6.github.io/learn-ai-marketing-with-phoebe/">AI + Marketing ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-marketing-attribution-with-phoebe/">Marketing Attribution ↗</a> &nbsp;·&nbsp; <a href="https://phoebefu6.github.io/learn-economics-with-phoebe/">Economics ↗</a></span>
+  </footer>
+</main>
+<script>
+window.MINDMAP_DATA = {
+  "title": "Marketing",
+  "centerColor": "#6E0F66",
+  "sessions": [
+    {
+      "label": "Who it is\nfor",
+      "href": "courses/01-who-it-is-for.html",
+      "color": "#34D399",
+      "concepts": [
+        {
+          "label": "Three market tests",
+          "href": "courses/01-who-it-is-for.html"
+        },
+        {
+          "label": "The beachhead",
+          "href": "courses/01-who-it-is-for.html"
+        },
+        {
+          "label": "ICP and not-for list",
+          "href": "courses/01-who-it-is-for.html"
+        }
+      ]
+    },
+    {
+      "label": "The\npromise",
+      "href": "courses/02-the-promise.html",
+      "color": "#34D399",
+      "concepts": [
+        {
+          "label": "Competitive alternatives",
+          "href": "courses/02-the-promise.html"
+        },
+        {
+          "label": "Attributes to value",
+          "href": "courses/02-the-promise.html"
+        },
+        {
+          "label": "The category frame",
+          "href": "courses/02-the-promise.html"
+        }
+      ]
+    },
+    {
+      "label": "Where they\nalready are",
+      "href": "courses/03-where-they-already-are.html",
+      "color": "#FBBF24",
+      "concepts": [
+        {
+          "label": "Nineteen channels",
+          "href": "courses/03-where-they-already-are.html"
+        },
+        {
+          "label": "Cheap tests first",
+          "href": "courses/03-where-they-already-are.html"
+        },
+        {
+          "label": "Folklore numbers",
+          "href": "courses/03-where-they-already-are.html"
+        }
+      ]
+    },
+    {
+      "label": "The funnel\nbench",
+      "href": "courses/04-the-funnel-bench.html",
+      "color": "#FBBF24",
+      "concepts": [
+        {
+          "label": "Most leads, fewer deals",
+          "href": "courses/04-the-funnel-bench.html"
+        },
+        {
+          "label": "The cheapest-lead trap",
+          "href": "courses/04-the-funnel-bench.html"
+        },
+        {
+          "label": "Ranges and the break button",
+          "href": "courses/04-the-funnel-bench.html"
+        }
+      ]
+    },
+    {
+      "label": "What a customer\nis worth",
+      "href": "courses/05-what-a-customer-is-worth.html",
+      "color": "#FB923C",
+      "concepts": [
+        {
+          "label": "Payback in months",
+          "href": "courses/05-what-a-customer-is-worth.html"
+        },
+        {
+          "label": "What LTV assumes",
+          "href": "courses/05-what-a-customer-is-worth.html"
+        },
+        {
+          "label": "The 3 to 1 benchmark",
+          "href": "courses/05-what-a-customer-is-worth.html"
+        }
+      ]
+    },
+    {
+      "label": "The one-page\nplan",
+      "href": "courses/06-the-one-page-plan.html",
+      "color": "#FB923C",
+      "concepts": [
+        {
+          "label": "The plan on one page",
+          "href": "courses/06-the-one-page-plan.html"
+        },
+        {
+          "label": "Brand vs activation",
+          "href": "courses/06-the-one-page-plan.html"
+        },
+        {
+          "label": "The stop number",
+          "href": "courses/06-the-one-page-plan.html"
+        }
+      ]
+    }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=2"></script>
+<script src="assets/app.js?v=2"></script>
+</body>
+</html>
