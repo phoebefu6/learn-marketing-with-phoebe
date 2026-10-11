@@ -19,8 +19,8 @@
   --amber-ink: #6A3B00;
   --amber-50: #FDF2DE;
   --paper: #FFFCFE;
-  --code-bg: #2B0F28;
-  --code-ink: #F7E9F4;
+  --code-bg: #FCEFFA;
+  --code-ink: #2B0F28;
   --scrim-rgb: 252,240,250;
   --shadow-rgb: 196,28,180;
   --radius: 14px;
@@ -241,7 +241,7 @@ details.card .body h4:first-child { margin-top: 0; }
 .pill.light { background: var(--indigo-50); color: var(--indigo); }
 .pill.inkpill { background: var(--ink); color: #fff; }
 .pill.amber, .pill.peach { background: var(--amber); color: #fff; }
-.pill.bare { color: var(--faint); }
+.pill.bare { color: var(--muted); }
 
 /* ---------- 4D grid ---------- */
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .8rem; margin: .5rem 0 1rem; }
@@ -270,10 +270,11 @@ table.clean td { padding: .7rem .6rem; border-bottom: .5px solid var(--hairline)
 table.clean td:first-child { font-weight: 600; }
 
 /* ---------- prompt boxes ---------- */
-.prompt-box {
+.prompt-box{
   position: relative;
-  background: var(--code-bg);
-  color: var(--code-ink);
+  background: #FCEFFA;
+  border: 1px solid #F2E3EF;
+  color: #2B0F28;
   border-radius: var(--radius);
   padding: 1.1rem 1.2rem;
   margin: 1rem 0 1.2rem;
@@ -283,12 +284,12 @@ table.clean td:first-child { font-weight: 600; }
   white-space: pre-wrap;
   word-break: break-word;
 }
-.prompt-box .label {
+.prompt-box .label{
   position: absolute;
   top: -0.7rem;
   left: 1rem;
-  background: var(--indigo);
-  color: #fff;
+  background: #C41CB4;
+  color: #FFFFFF;
   font-family: "Inter", -apple-system, sans-serif;
   font-size: .68rem;
   font-weight: 700;
@@ -299,13 +300,13 @@ table.clean td:first-child { font-weight: 600; }
 }
 .prompt-box.bad .label { background: var(--faint); color: var(--ink); }
 .prompt-box.good .label { background: var(--amber); color: #fff; }
-.copy-btn {
+.copy-btn{
   position: absolute;
   top: .7rem;
   right: .7rem;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.25);
-  color: #fff;
+  background: #FFFFFF;
+  border: 1px solid #F2E3EF;
+  color: #2B0F28;
   border-radius: 999px;
   padding: .25rem .8rem;
   font-size: .72rem;
@@ -314,7 +315,7 @@ table.clean td:first-child { font-weight: 600; }
   font-family: "Inter", -apple-system, sans-serif;
   transition: background .15s ease;
 }
-.copy-btn:hover { background: rgba(255,255,255,.22); }
+.copy-btn:hover { background: #F2E3EF; }
 .copy-btn.copied { background: var(--amber); border-color: var(--amber); color: #fff; }
 
 /* ---------- demo steps ---------- */
@@ -409,7 +410,7 @@ figure.zoomable figcaption {
   gap: .4rem;
 }
 
-.lightbox {
+.lightbox{
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -421,8 +422,10 @@ figure.zoomable figcaption {
   cursor: zoom-out;
 }
 .lightbox.open { display: flex; }
-.lightbox .inner {
+.lightbox .inner{
   background: #fff;
+  border: 1px solid #F2E3EF;
+  box-shadow: 0 10px 40px rgba(43,15,40,.14);
   border-radius: var(--radius);
   padding: 2rem;
   max-width: 94vw;
@@ -430,7 +433,7 @@ figure.zoomable figcaption {
   overflow: auto;
 }
 .lightbox .inner svg, .lightbox .inner img { width: min(88vw, 70rem); height: auto; }
-.lightbox .close-hint {
+.lightbox .close-hint{
   position: fixed;
   top: 1rem; right: 1.4rem;
   color: var(--ink);
@@ -455,7 +458,7 @@ figure.zoomable figcaption {
 .covered-row .note { margin-left: auto; color: var(--muted); font-size: .78rem; text-align: right; }
 
 /* ---------- cheat sheet footer ---------- */
-.cheat {
+.cheat{
   background: var(--indigo-50);
   border: 1px solid var(--indigo-soft);
   color: var(--ink);
@@ -1331,3 +1334,33 @@ figure.zoomable.can-scroll figcaption::after {
 .fb-slide input { width: 100%; accent-color: var(--indigo); }
 .fb-slide b { font-variant-numeric: tabular-nums; text-align: right; color: var(--indigo-deep); }
 .fb-rail { margin-top: 8px; }
+
+/* layout-patch-3: phone-width overflow (2026-10-10) */
+.sql-bar { flex-wrap: wrap; }
+@media (max-width: 480px) {
+  .covered-row { flex-wrap: wrap; }
+  .covered-row .note { margin-left: 0; text-align: left; flex-basis: 100%; }
+  details.card summary { flex-wrap: wrap; }
+  details.card summary .mini { white-space: normal; }
+  .wk, .sqlbox, .prompt-box, pre { max-width: 100%; overflow-x: auto; }
+  .mono, code, strong, .note { overflow-wrap: anywhere; }
+  select, input[type=range], label { max-width: 100%; }
+  canvas, svg, img { max-width: 100%; height: auto; }
+  .tree-kids, .tree-node-wrap, .tree-node, .rb-night, .al-row, .gd-field, .tl-row, .sl-row { max-width: 100%; overflow-x: auto; }
+  .tl-cols, .sl-cols, .bb-cols, .ev-cols, [class$="-cols"] { grid-template-columns: 1fr !important; display: grid; }
+  .tl-cols > *, .sl-cols > *, [class$="-cols"] > * { min-width: 0; max-width: 100%; }
+  .mono { white-space: normal; }
+  .er-w, .bb-lab, .tl-lev, .sl-lev { max-width: 100%; white-space: normal; }
+}
+/* contrast-patch-2b */
+.cheat a { color: var(--indigo-deep, var(--ink)); }
+.chip.audience { background: transparent; border-color: rgba(255,255,255,.55); }
+.masthead a, .masthead .sub a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.prompt-box b, .prompt-box strong { color: var(--indigo-deep, var(--ink)); }
+.prompt-box span, .prompt-box em, .prompt-box i { color: inherit; }
+.pp-stamp i { color: var(--ink); }
+/* contrast-patch-2 */
+.klabel, .section-kicker .klabel, details.card summary .caret, .crumb a, .toolbar .crumb a, .pagenav a, .pagefoot a, footer.pagefoot a, .pagefoot p a, .cnum, .course-card .cnum, .pill.light, .covered-row .status.light, .paths a, .tag.concept, .chip.level, .quiz-score, .mmd-launch, .mode.self, .legend .pill.light { color: var(--indigo-deep); }
+.chip.audience { background: transparent; border-color: rgba(255,255,255,.55); }
+.journey a { background: var(--indigo-deep); border-color: rgba(255,255,255,.6); }
+.skip-link { background: var(--indigo-deep); }
